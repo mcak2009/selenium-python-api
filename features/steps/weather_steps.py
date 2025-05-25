@@ -17,16 +17,20 @@ def step_impl(context):
 @then('the response status code should be 200')
 def then_status_code(context):
     assert context.response.status_code == 200
+    print("Assertion complete: The status code is 200")
     
 
 @then('I should get the current temperature')
 def step_impl(context):
     data = context.response.json()
     assert 'main' in data and 'temp' in data['main']
+    print("data(main): ", data['main'])
 
 @then('the response status code should be 404')
 def then_status_code(context):
     assert context.response.status_code == 404
+    print("Assertion complete: The status code is 404")
+
     
 
 
